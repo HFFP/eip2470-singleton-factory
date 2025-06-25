@@ -1,0 +1,28 @@
+{
+  "name": "@lonzo_hffp/eip2470-singleton-factory-v6",
+  "version": "1.0.0",
+  "description": "EIP2470 SingletonFactory",
+  "repository": "git@github.com:HFFP/eip2470-singleton-factory.git",
+  "author": "lonzo <lonzohffp@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "main": "../dist/index.js",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@typechain/ethers-v6": "^0.5.1",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "ethers": "^6.14.4"
+  },
+  "peerDependencies": {
+    "ethers": "^6.14.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npx ts-node src/test/eip2470.test.ts",
+    "release:patch": "yarn version --patch --no-git-tag-version && yarn build && yarn publish --access public"
+  }
+}
