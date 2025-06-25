@@ -1,27 +1,33 @@
 {
-  "name": "@lonzo_hffp/eip2470-singleton-factory",
-  "version": "1.0.2",
-  "description": "EIP2470 SingletonFactory",
-  "repository": "git@github.com:HFFP/eip2470-singleton-factory.git",
+  "name": "@lonzo_hffp/eip2470-singleton-factory-v5",
+  "version": "1.0.4",
+  "description": "EIP2470 SingletonFactory for ethers v5",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HFFP/eip2470-singleton-factory.git"
+  },
   "author": "lonzo <lonzohffp@gmail.com>",
   "license": "MIT",
   "private": false,
-  "main": "../dist/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/ethers-v5": "^4.0.0",
+    "ts-generator": "^0.1.1",
     "ts-node": "^10.9.2",
-    "typechain": "^8.3.2",
+    "typechain": "^4.0.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "ethers": "^6.14.4"
+    "ethers": "^5.0.8"
   },
   "peerDependencies": {
-    "ethers": "^6.14.4"
+    "ethers": "^5.0.8"
   },
   "scripts": {
-    "build": "../node_modules/.bin/tsc",
-    "test": "npx ts-node src/test/eip2470.test.ts"
+    "build": "tsc",
+    "test": "npx ts-node src/test/eip2470.test.ts",
+    "typechain": "typechain --target ethers-v5 --outDir ./src/typechain './src/abi/**/*.json'",
+    "release:patch": "yarn version --patch --no-git-tag-version && yarn build && yarn publish --access public"
   }
 }

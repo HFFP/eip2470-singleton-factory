@@ -5,9 +5,9 @@ import {strongInfo} from "./log";
 export const gwei = ethers.parseUnits('1', 'gwei')
 export const ERC2470_ADDRESS = '0xce0042B868300000d44A59004Da54A005ffdcf9f'
 
-export async function getErc2470Factory(signer: Signer, generate = false) {
+export async function getErc2470Factory(signer: Signer, generate = false, options?: {gasPrice?: bigint}) {
     const provider = checkSignerProvider(signer)
-    const address = generate ? (await generate2470(provider)).contractAddress : ERC2470_ADDRESS
+    const address = generate ? (await generate2470(provider, options)).contractAddress : ERC2470_ADDRESS
     if (await isContract(address, provider)) {
         return SingletonFactory__factory.connect(address, signer)
     } else {

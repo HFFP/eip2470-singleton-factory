@@ -5,15 +5,15 @@
 ## Install
 
 ```bash
-npm install @lonzo_hffp/eip2470-singleton-factory
+npm install @lonzo_hffp/eip2470-singleton-factory-v6
 # Or
-yarn add @lonzo_hffp/eip2470-singleton-factory
+yarn add @lonzo_hffp/eip2470-singleton-factory-v6
 ```
 
 ## Usage
 
 ```typescript
-import { getErc2470Factory, deployWith2470Factory } from '@lonzo_hffp/eip2470-singleton-factory';
+import { getErc2470Factory, deployWith2470Factory } from '@lonzo_hffp/eip2470-singleton-factory-v6';
 
 // 获取 Singleton Factory 地址
 const provider = new JsonRpcProvider('https://rpc.mevblocker.io')
