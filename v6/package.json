@@ -1,6 +1,6 @@
 {
   "name": "@lonzo_hffp/eip2470-singleton-factory-v6",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "EIP2470 SingletonFactory",
   "repository": "git@github.com:HFFP/eip2470-singleton-factory.git",
   "author": "lonzo <lonzohffp@gmail.com>",

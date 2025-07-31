@@ -15,7 +15,7 @@ export async function getErc2470Factory(signer: Signer, generate = false, option
     }
 }
 
-export async function deploy2470(signer: Signer, generate: boolean = false) {
+export async function deploy2470(signer: Signer, generate: boolean = false, options?: {gasPrice?: bigint}) {
     const provider = checkSignerProvider(signer)
     strongInfo('------deploy erc2470 SingletonFactory-------')
     if (!generate) {
@@ -30,7 +30,7 @@ export async function deploy2470(signer: Signer, generate: boolean = false) {
         strongInfo(`deploy tx: ${tx.hash}`)
         return SingletonFactory__factory.connect(ERC2470_ADDRESS, signer)
     } else {
-        const {rawTx, wallet, gas, contractAddress: erc2470Address} = await generate2470(signer.provider!)
+        const {rawTx, wallet, gas, contractAddress: erc2470Address} = await generate2470(signer.provider!, options)
         if (await isContract(erc2470Address, provider)) {
             return SingletonFactory__factory.connect(erc2470Address, signer)
         } else {
