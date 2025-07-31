@@ -11,7 +11,7 @@ export async function getErc2470Factory(signer: Signer, generate = false, option
     if (await isContract(address, provider)) {
         return SingletonFactory__factory.connect(address, signer)
     } else {
-        return await deploy2470(signer, generate)
+        return await deploy2470(signer, generate, options)
     }
 }
 
