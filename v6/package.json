@@ -1,12 +1,12 @@
 {
   "name": "@lonzo_hffp/eip2470-singleton-factory-v6",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "EIP2470 SingletonFactory",
   "repository": "git@github.com:HFFP/eip2470-singleton-factory.git",
   "author": "lonzo <lonzohffp@gmail.com>",
   "license": "MIT",
   "private": false,
-  "main": "../dist/index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
     "@typechain/ethers-v6": "^0.5.1",
